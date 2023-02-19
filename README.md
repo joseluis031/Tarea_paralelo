@@ -1,6 +1,6 @@
 # Tarea_paralelo
 
-El link de este repositorio es el siguiente:
+El link de este repositorio es el siguiente:[GitHub](https://github.com/joseluis031/Tarea_paralelo.git)
 
 ## Codigo en secuencial
 
