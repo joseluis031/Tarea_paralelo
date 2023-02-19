@@ -57,3 +57,11 @@ if __name__ == "__main__":
 En este codigo podemos ver como se crea un grupo de procesos (Pool) con 4 procesos 
 y con la funcion map se puede ejecutar la funcion scrape a cada url de la lista de urls
 Este codigo puede llegar a ser mas optimo que el codigo en secuencial
+
+Si se necesita rapidez y tenemos una gran lista de elementos, el codigo en paralelo
+puede llegar a ser el mas optimo. Por el contrario, el codigo en secuencial puede 
+llegar a ser mas util ya que es mas facil.
+
+En este ejercicio podemos ver que a veces es mas optimo un codigo y a veces es mas 
+optimo el otro codigo, ya que tenemos una lista pequeña, es posible que se de esta
+situacion
