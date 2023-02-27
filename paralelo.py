@@ -35,8 +35,10 @@ def time_multiprocesamiento(urls):
 
 # ejecuto en paralelo ambos programas
 if __name__ == '__main__':
-    a = time_secuencial(urls)
-    a
-    b = time_multiprocesamiento(urls)
-    b
+    p1 = Process(target=time_secuencial, args=(urls,))
+    p2 = Process(target=time_multiprocesamiento, args=(urls,))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
     
