@@ -113,3 +113,24 @@ llegar a ser mas util ya que es mas facil.
 En este ejercicio podemos ver que a la hora de la ejecucion en paralelo, siempre tarda 
 menos en ejecutarse el codigo en multiproceso, como podemos ver a continuacion
 ### Ejecucion del codigo en paralelo
+
+```
+Empezamos a.com
+Empezamos a.com
+Empezamos b.com
+Empezamos c.com
+Empezamos d.com
+Acabado a.com en 0.053 segundos
+Acabado a.com en 0.59 segundos
+Empezamos b.com
+Acabado c.com en 0.39 segundos
+Acabado b.com en 0.432 segundos
+Acabado d.com en 0.606 segundos
+El tiempo total en programacion multiprocesamiento son 0.8823111057281494 segundos
+Acabado b.com en 0.932 segundos
+Empezamos c.com
+Acabado c.com en 0.161 segundos
+Empezamos d.com
+Acabado d.com en 0.759 segundos
+El tiempo total en programacion secuencial son 2.485687732696533 segundos
+```
