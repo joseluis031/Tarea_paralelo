@@ -55,13 +55,61 @@ if __name__ == "__main__":
 ```
 
 En este codigo podemos ver como se crea un grupo de procesos (Pool) con 4 procesos 
-y con la funcion map se puede ejecutar la funcion scrape a cada url de la lista de urls
+y con la funcion map se puede ejecutar la funcion scrape a cada url de la lista de urls.
 Este codigo puede llegar a ser mas optimo que el codigo en secuencial
+
+## Codigo en paralelo 
+
+```
+from time import sleep
+from multiprocessing import Process, Pool
+import random
+import time
+
+
+def scrape(url):
+    print("Empezamos", url)
+    duracion = round(random.random(), 3)
+    sleep(duracion)
+    print("Acabado", url, "en", duracion, "segundos")
+    return url, duracion
+
+urls = ["a.com", "b.com", "c.com", "d.com"]
+
+
+def time_secuencial(urls):
+    tiempo_inicial = time.time()
+    output = []
+    for url in urls:
+        output.append(scrape(url))
+    Tiempo_secuencial = ("son {} segundos".format(time.time() - tiempo_inicial))
+    print("El tiempo total en programacion secuencial", Tiempo_secuencial)
+
+
+def time_multiprocesamiento(urls):
+    tiempo_inicial = time.time()
+    pool = Pool(processes=4)
+    data = pool.map(scrape, urls)
+    pool.close()
+    Tiempo_multi = ("son {} segundos".format(time.time() - tiempo_inicial))
+    print("El tiempo total en programacion multiprocesamiento",Tiempo_multi)
+
+
+
+# ejecuto en paralelo ambos programas
+if __name__ == '__main__':
+    p1 = Process(target=time_secuencial, args=(urls,))
+    p2 = Process(target=time_multiprocesamiento, args=(urls,))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
+```
 
 Si se necesita rapidez y tenemos una gran lista de elementos, el codigo en paralelo
 puede llegar a ser el mas optimo. Por el contrario, el codigo en secuencial puede 
 llegar a ser mas util ya que es mas facil.
 
-En este ejercicio podemos ver que a veces es mas optimo un codigo y a veces es mas 
-optimo el otro codigo, ya que tenemos una lista pequeña, es posible que se de esta
-situacion
+En este ejercicio podemos ver que a la hora de la ejecucion en paralelo, siempre tarda 
+menos en ejecutarse el codigo en multiproceso, como podemos ver a continuacion
+### Ejecucion del codigo en paralelo
