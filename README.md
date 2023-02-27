@@ -1,7 +1,8 @@
 # Tarea_paralelo
 
-El link de este repositorio es el siguiente:[GitHub](https://github.com/joseluis031/Tarea_paralelo.git)
+El link de este repositorio es el siguiente: [GitHub](https://github.com/joseluis031/Tarea_paralelo.git)
 
+Para realizar esta tarea he utilizado 3 codigos diferentes:
 ## Codigo en secuencial
 
 ```
@@ -24,7 +25,8 @@ for url in urls:
 ```
 
 En este codigo podemos ver que cada solicitud se espera hasta que se acabe
-para dar paso a la siguiente solicitud.
+para dar paso a la siguiente solicitud y el tiempo total de procesamiento
+es la suma de cada "mini proceso"
 Es un codigo mas simple.
 
 ## Codigo en multiproceso
